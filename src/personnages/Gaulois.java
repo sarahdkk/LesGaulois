@@ -45,13 +45,15 @@ public class Gaulois {
     }
 	
 	public void sePresenter() {
+		StringBuilder texte = new StringBuilder("Bonjour, je m'appelle" + nom + ". ");
 		if (village == null) {
-			System.out.println("Le Gaulois " + nom + " : \"Bonjour, je m'appelle " + nom + ". Je voyage de villages en villages.\"");
+			texte.append("Je voyage de villages en villages.\"");
 		} else if (this == village.getChef()) {
-			System.out.println("Le Gaulois " + nom + " : \"Bonjour, je m'appelle " + nom + ". Je suis le chef le village : " + village.getNom() + ".\"");
+			texte.append(" Je suis le chef le village : " + village.getNom() + ".\"");
 		} else {
-			System.out.println("Le Gaulois " + nom + " : \"Bonjour, je m'appelle " + nom + ". J'habite le village : "+ village.getNom() + ".\"");
+			texte.append("J'habite le village : "+ village.getNom() + ".\"");
 		}
+		parler(texte.toString());
 	}
 	
 	@Override
